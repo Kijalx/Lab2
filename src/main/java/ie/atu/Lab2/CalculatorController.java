@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class CalculatorController {
 
-    @GetMapping("/calculate")
+    @GetMapping("/calculate/{num1}/{num2}/{operation}")
     @ResponseBody
-    public String calculator(@RequestParam int num1, @RequestParam int num2, @RequestParam String operation){
+    public String calculator(@PathVariable int num1, @PathVariable int num2, @PathVariable String operation){
         int ans = 0;
         switch (operation){
             case "add":
